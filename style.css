@@ -1,0 +1,88 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+}
+
+form {
+  display: inline-block;
+  text-align: left;
+  max-width: 300px;
+  margin: 20px auto;
+  border: 2px solid #ddd;
+  padding: 20px 50px;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+.error{
+  display: none;
+}
+ /* Apply some basic styling to the user blocks */
+ .user-block {
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.user-block:hover {
+  transform: scale(1.01);
+}
+
+/* Style for the loader */
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 50px auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -25px;
+  z-index: 1000;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

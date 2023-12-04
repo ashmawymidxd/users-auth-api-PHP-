@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loader" class="loader"></div>
+  <div id="user-container"></div>
+
+  <script>
+    // Display loader while fetching data
+    const loader = document.getElementById("loader");
+    loader.style.display = "block";
+
+    // Make a GET request to the API endpoint
+    fetch("https://registerapi.000webhostapp.com/user/getall.php")
+      .then((response) => response.json())
+      .then((data) => {
+        // Hide the loader once data is fetched
+        loader.style.display = "none";
+
+        // Handle the response data
+        if (data.status === "success") {
+          // Assuming you have an HTML element with the id "user-container" to display the users
+          const userContainer = document.getElementById("user-container");
+
+          // Clear any existing content in the user container element
+          userContainer.innerHTML = "";
+
+          // Loop through each user and create a block for each one
+          data.users.forEach((user) => {
+            const userBlock = document.createElement("div");
+            userBlock.className = "user-block";
+
+            // Add user information to the block
+            userBlock.innerHTML = `
+            <p><strong>Name:</strong> ${user.id}</p>
+            <p><strong>Name:</strong> ${user.name}</p>
+            <p><strong>Email:</strong> ${user.email}</p>
+            <p><strong>Address:</strong> ${user.address}</p>
+            <p><strong>Contact:</strong> ${user.contact}</p>
+            <p><strong>Password:</strong> ${user.password}</p>
+            <p><strong>Profile Image:</strong><img src='${user.profile_image}'/></p>
+            <p><strong>Created at:</strong> ${user.created_at}</p>
+          `;
+
+            // Append the user block to the user container
+            userContainer.appendChild(userBlock);
+          });
+        } else {
+          console.error("Error:", data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Fetch error:", error);
+      });
+  </script>
+</body>
+</html>
