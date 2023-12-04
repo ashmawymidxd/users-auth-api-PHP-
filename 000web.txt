@@ -1,19 +1,5 @@
-db password:- @Ahmed1234
-
-Chrome
-login https://www.000webhost.com/
-pass :- Ahmed11223344
-email :- uyu365666@gmail.com
-
-Eage
-login / https://panel.000webhost.com/
-pass  / Ahmed@11223344
-email / uyu365222@gmail.com
-websit pass = @Ahmed1234
-
-
 https://registerapi.000webhostapp.com/user/register.php 
-get:-https://registerapi.000webhostapp.com/user/getall.php // this api to get all users
+get:-https://registerapi.000webhostapp.com/user/getall.php
 post:-https://registerapi.000webhostapp.com/user/show.php
 post:-https://registerapi.000webhostapp.com/user/delete.php
 post:-https://registerapi.000webhostapp.com/user/update.php
